@@ -6,3 +6,9 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Spring Boot compiled artifacts
+spring-boot-backend/target/
+target/
+*.jar
+*.class
