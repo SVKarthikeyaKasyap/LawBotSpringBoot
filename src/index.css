@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(220 26% 14%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 26% 14%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(220 26% 14%);
+
+  --color-primary: hsl(220 60% 18%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(220 40% 96%);
+  --color-secondary-foreground: hsl(220 60% 18%);
+
+  --color-muted: hsl(220 14% 96%);
+  --color-muted-foreground: hsl(220 14% 46%);
+
+  --color-accent: hsl(43 96% 56%);
+  --color-accent-foreground: hsl(220 60% 18%);
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  --color-border: hsl(220 14% 91%);
+  --color-input: hsl(220 14% 91%);
+  --color-ring: hsl(220 60% 18%);
+
+  --radius: 0.75rem;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 26% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+    --primary: 220 60% 18%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 40% 96%;
+    --secondary-foreground: 220 60% 18%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 14% 46%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 60% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 14% 91%;
+    --input: 220 14% 91%;
+    --ring: 220 60% 18%;
+    --radius: 0.75rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(220 60% 18%) 0%, hsl(220 70% 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%) 0%, hsl(38 100% 50%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 60% 18%) 0%, hsl(220 50% 25%) 50%, hsl(43 96% 56% / 0.3) 100%);
+    
+    --shadow-elegant: 0 10px 30px -10px hsl(220 60% 18% / 0.2);
+    --shadow-card: 0 2px 8px hsl(220 14% 14% / 0.08);
+    --shadow-glow: 0 0 40px hsl(43 96% 56% / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 26% 14%;
+    --foreground: 0 0% 98%;
+    --card: 220 22% 18%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 22% 18%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 220 26% 14%;
+    --secondary: 220 22% 22%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 22% 22%;
+    --muted-foreground: 220 14% 66%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 26% 14%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 22% 22%;
+    --input: 220 22% 22%;
+    --ring: 43 96% 56%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(220 26% 14%) 0%, hsl(220 22% 18%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%) 0%, hsl(38 100% 50%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 26% 8%) 0%, hsl(220 22% 14%) 50%, hsl(43 96% 56% / 0.2) 100%);
+    
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(43 96% 56% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+    font-feature-settings: "cv11", "ss01";
+    font-optical-sizing: auto;
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
